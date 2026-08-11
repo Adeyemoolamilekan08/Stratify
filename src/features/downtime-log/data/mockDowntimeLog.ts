@@ -1,0 +1,123 @@
+import { DowntimeLog } from "../types/downtimeLog";
+
+export const mockDowntimeLogs: DowntimeLog[] = [
+  {
+    id: "1",
+    shift: "Shift 2",
+    machine: "HT-29-HT-270",
+    downtimeStart: "07:15:24",
+    downtimeEnd: "--:--:--",
+    duration: "00:12:36",
+    reason: "Select Reason",
+    explanation: "",
+    hasRemark: true,
+  },
+
+  {
+    id: "2",
+    shift: "Shift 2",
+    machine: "HT-29-HT-270",
+    downtimeStart: "08:42:18",
+    downtimeEnd: "08:55:11",
+    duration: "00:12:53",
+    reason: "Machine Breakdown",
+    explanation: "Hydraulic pressure dropped.",
+    hasRemark: true,
+  },
+
+  {
+    id: "3",
+    shift: "Shift 2",
+    machine: "HT-31-HT-120",
+    downtimeStart: "09:16:55",
+    downtimeEnd: "09:24:40",
+    duration: "00:07:45",
+    reason: "Material Shortage",
+    explanation: "Waiting for raw material.",
+    hasRemark: true,
+  },
+
+  {
+    id: "4",
+    shift: "Shift 1",
+    machine: "HT-17-HT-510",
+    downtimeStart: "10:48:32",
+    downtimeEnd: "10:59:27",
+    duration: "00:10:55",
+    reason: "Tool Change",
+    explanation: "Routine tool replacement.",
+    hasRemark: true,
+  },
+
+  {
+    id: "5",
+    shift: "Shift 3",
+    machine: "HT-18-HT-845",
+    downtimeStart: "12:11:04",
+    downtimeEnd: "--:--:--",
+    duration: "00:18:02",
+    reason: "Power Failure",
+    explanation: "Power restored after inspection.",
+    hasRemark: true,
+  },
+
+  {
+    id: "6",
+    shift: "Shift 1",
+    machine: "HT-22-HT-310",
+    downtimeStart: "13:42:56",
+    downtimeEnd: "13:55:41",
+    duration: "00:12:45",
+    reason: "Preventive Maintenance",
+    explanation: "Scheduled maintenance activity.",
+    hasRemark: true,
+  },
+
+  {
+    id: "7",
+    shift: "Shift 2",
+    machine: "HT-14-HT-610",
+    downtimeStart: "15:08:14",
+    downtimeEnd: "15:15:32",
+    duration: "00:07:18",
+    reason: "Quality Issue",
+    explanation: "Dimension out of tolerance.",
+    hasRemark: true,
+  },
+
+  {
+    id: "8",
+    shift: "Shift 3",
+    machine: "HT-20-HT-410",
+    downtimeStart: "16:27:35",
+    downtimeEnd: "16:39:02",
+    duration: "00:11:27",
+    reason: "Operator Break",
+    explanation: "",
+    hasRemark: true,
+  },
+
+  {
+    id: "9",
+    shift: "Shift 1",
+    machine: "HT-09-HT-190",
+    downtimeStart: "18:05:13",
+    downtimeEnd: "18:14:46",
+    duration: "00:09:33",
+    reason: "Planned Stop",
+    explanation: "Shift handover.",
+    hasRemark: true,
+  },
+
+  {
+    id: "10",
+    shift: "Shift 2",
+    machine: "HT-27-HT-920",
+    downtimeStart: "20:11:54",
+    downtimeEnd: "20:20:31",
+    duration: "00:08:37",
+    reason: "Machine Breakdown",
+    explanation: "Motor overload alarm.",
+    hasRemark: true,
+  },
+];

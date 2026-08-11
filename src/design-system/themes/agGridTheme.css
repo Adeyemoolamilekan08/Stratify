@@ -1,0 +1,33 @@
+/* src/design-system/themes/agGridTheme.css */
+
+/* Production Log Grid Theme */
+.production-grid {
+  --ag-header-height: 36px;
+  --ag-row-height: 44px;
+  --ag-font-size: 12px;
+  --ag-font-family: inherit;
+  
+  /* Header */
+  --ag-header-foreground-color: #6B7280;
+  --ag-header-background-color: transparent;
+  --ag-header-cell-hover-background-color: transparent;
+  
+  /* Rows */
+  --ag-data-color: #1F2937;
+  --ag-row-hover-color: #FAFBFC;
+  --ag-row-border-color: #F0F0F0;
+  --ag-row-border-width: 1px;
+  
+  /* Cell */
+  --ag-cell-horizontal-padding: 8px;
+  --ag-cell-horizontal-border: none;
+  
+  /* Selection */
+  --ag-selected-row-background-color: #E9EBF8;
+  --ag-checkbox-unchecked-color: #D1D5DB;
+  --ag-checkbox-checked-color: #33479A;
+  
+  /* Borders */
+  --ag-borders: none;
+  --ag-border-color: #F0F0F0;
+}
