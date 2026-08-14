@@ -44,3 +44,9 @@ export interface FilterState {
   minQuantity?: number;
   maxQuantity?: number;
 }
+export interface Equipment {
+  id: string;
+  name: string;
+  code: string;
+  department: string;
+}

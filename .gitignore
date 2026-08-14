@@ -12,11 +12,6 @@ dist
 dist-ssr
 *.local
 
-# Environment variables (set these in Vercel dashboard instead)
-.env
-.env.local
-.env.*.local
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -30,3 +25,5 @@ dist-ssr
 
 tsconfig.tsbuildinfo
 ts_errors.txt
+backend/.env
+backend/node_modules/

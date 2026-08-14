@@ -3,6 +3,8 @@
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { DashboardLayout } from '@components/layout/DashboardLayout';
+import { ModulePage } from '@features/erp/pages/ModulePage';
+
 
 // Lazy load pages
 const Login = lazy(() => import('@features/auth/pages/Login'));
@@ -35,6 +37,19 @@ const ProfileSettings = lazy(() => import('@features/profile/pages/ProfileSettin
 
 // Master Data
 const MasterDataLayout = lazy(() => import('@features/master-data/MasterDataLayout'));
+const WorkOrders = () => <ModulePage kind="work-orders" />;
+const BOMs = () => <ModulePage kind="boms" />;
+const Inventory = () => <ModulePage kind="inventory" />;
+const Locations = () => <ModulePage kind="locations" />;
+const SFG = () => <ModulePage kind="sfg" />;
+const Assembly = () => <ModulePage kind="assembly" />;
+const FGQuarantine = () => <ModulePage kind="fg-quarantine" />;
+const FGStore = () => <ModulePage kind="fg-store" />;
+const Grinding = () => <ModulePage kind="grinding" />;
+const Regrind = () => <ModulePage kind="regrind" />;
+const ProductionSummary = () => <ModulePage kind="production-summary" />;
+const Approvals = () => <ModulePage kind="approvals" />;
+const AuditTrail = () => <ModulePage kind="audit" />;
 
 const ColorPage = lazy(() => import('@features/master-data/pages/ColorPage'));
 const MachinePage = lazy(() => import('@features/master-data/pages/MachinePage'));
@@ -77,6 +92,20 @@ export const router = createBrowserRouter(
         { path: 'production-log', element: <Suspense fallback={<PageLoader />}><ProductionLog /></Suspense> },
         { path: 'production-log/settings', element: <Suspense fallback={<PageLoader />}><ProductionLogSettings /></Suspense> },
         { path: 'downtime-log', element: <Suspense fallback={<PageLoader />}><DowntimeLog /></Suspense> },
+        { path: 'work-orders', element: <WorkOrders /> },
+        { path: 'boms', element: <BOMs /> },
+        { path: 'inventory', element: <Inventory /> },
+        { path: 'locations', element: <Locations /> },
+        { path: 'sfg', element: <SFG /> },
+        { path: 'assembly', element: <Assembly /> },
+        { path: 'fg-quarantine', element: <FGQuarantine /> },
+        { path: 'fg-store', element: <FGStore /> },
+        { path: 'grinding', element: <Grinding /> },
+        { path: 'regrind', element: <Regrind /> },
+        { path: 'production-summary', element: <ProductionSummary /> },
+        { path: 'approvals', element: <Approvals /> },
+        { path: 'audit', element: <AuditTrail /> },
+
         
         // Dashboards
         { path: 'live-shopfloor', element: <Suspense fallback={<PageLoader />}><LiveShopfloor /></Suspense> },
@@ -118,10 +147,5 @@ export const router = createBrowserRouter(
         },
       ],
     },
-  ],
-  {
-    future: {
-      v7_startTransition: true,
-    },
-  }
+  ]
 );

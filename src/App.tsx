@@ -30,12 +30,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <MobileProvider>
           <Suspense fallback={<AppLoader />}>
-            <RouterProvider 
-              router={router} 
-              future={{
-                v7_startTransition: true,
-              }}
-            />
+            <RouterProvider router={router} />
           </Suspense>
           <Toaster
             position="top-right"

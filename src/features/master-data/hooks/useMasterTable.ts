@@ -1,7 +1,7 @@
 // src/features/master-data/hooks/useMasterTable.ts
 
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { masterDataService } from '../services/masterDataService';
+import { masterDataService } from '../services/MasterDataService';
 import { masterEntities, MasterEntity } from '../config/entities';
 import { masterColumns } from '../config/columns';
 import { masterForms } from '../config/forms';

@@ -1,4 +1,4 @@
-import { DowntimeLog } from "../types/downtimeLog";
+import { DowntimeLog } from "../types/downtime-log.types";
 
 export const mockDowntimeLogs: DowntimeLog[] = [
   {

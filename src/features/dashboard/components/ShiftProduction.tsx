@@ -10,26 +10,26 @@ interface ShiftProductionProps {
   onRefreshAll?: () => void;
 }
 
-const operators = ['Operator', 'Isaac Ayomide', 'Production Planner', 'Admin'];
+const operators = ['OP01', 'OP02'];
 
 export function ShiftProduction({ groups, onRefreshRow }: ShiftProductionProps) {
   const [selectedOperators, setSelectedOperators] = useState<Record<string, string>>({});
 
   return (
     <section className="min-w-0 border border-[#E4E7EC] bg-white px-3 pb-2 pt-2 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-      <h2 className="mb-2 text-[14px] font-medium text-[#222]">Shift production</h2>
+      <h2 className="mb-2 text-[16px] font-bold text-[#222]">Shift production</h2>
 
       <div className="space-y-1">
         {groups.map((group) => (
           <article key={group.machine} className="border-b border-[#E5E7EB] pb-2 last:border-b-0">
-            <h3 className="mb-1 text-[16px] font-normal leading-5 text-[#344A83]">{group.machine}</h3>
+            <h3 className="mb-1 text-[17px] font-bold leading-5 text-[#344A83]">{group.machine}</h3>
 
             <div className="mb-1 flex h-8 max-w-[210px] items-center rounded-[2px] bg-[#F0F0F0] px-2">
               <UserIcon className="mr-1.5 h-3.5 w-3.5 text-[#666]" />
               <select
                 value={selectedOperators[group.machine] ?? operators[0]}
                 onChange={(event) => setSelectedOperators((current) => ({ ...current, [group.machine]: event.target.value }))}
-                className="h-full min-w-0 flex-1 appearance-none bg-transparent pr-4 text-[10px] text-[#666] outline-none"
+                className="h-full min-w-0 flex-1 appearance-none bg-transparent pr-4 text-[12px] font-semibold text-[#374151] outline-none"
                 aria-label={`Operator for ${group.machine}`}
               >
                 {operators.map((operator) => <option key={operator}>{operator}</option>)}

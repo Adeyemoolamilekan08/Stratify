@@ -48,7 +48,7 @@ const Dashboard = () => {
 
       {/* The dashboard itself does not scroll. DashboardLayout owns the one page scrollbar. */}
       <div className="w-full">
-        <div className="grid w-full grid-cols-1 gap-2 lg:grid-cols-[42%_58%]">
+        <div className="grid w-full grid-cols-1 gap-2 lg:grid-cols-2">
           <ShiftOEE shift={selectedShiftLabel} data={data} />
 
           <div className="flex min-w-0 flex-col gap-2">

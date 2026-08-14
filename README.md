@@ -1,75 +1,33 @@
-# React + TypeScript + Vite
+# STRATIFY 2.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+STRATIFY Planner is being evolved from the MP4-based frontend prototype into the owner's transaction-based production planning, control and inventory system.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Frontend: React, Vite, TypeScript, Tailwind CSS
+- Backend: Node.js, Express, PostgreSQL
+- API: REST
+- Transaction model: atomic inventory movements with immutable ledger records
 
-## React Compiler
+## Implementation direction
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The owner specifications are the functional source of truth. The MP4 is the UI/UX reference. Existing frontend work is reused where it is compatible; conflicting prototype pieces may be replaced.
 
-## Expanding the ESLint configuration
+## Run frontend
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Backend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This package contains the frontend only. Set `VITE_API_URL` (and `VITE_WS_URL`, if used) in your `.env` to point at wherever the backend API is hosted.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Current architecture
 
-```
+Masters → BOMs → Work Orders → Material Issue → DPR → SFG → Assembly → FG Quarantine → QC → FG Store
+
+Production rejection/lumps → Grinding → Regrind → Raw Material Store
+
+The frontend contains the interaction layer; the Node.js backend owns authoritative business rules, inventory posting, database transactions, permissions and auditability.

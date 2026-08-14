@@ -1,4 +1,4 @@
-import { ProductionPlan } from "../types/production";
+import { ProductionPlan } from "../types/productionPlanning";
 
 export const mockProduction: ProductionPlan[] = [
   {

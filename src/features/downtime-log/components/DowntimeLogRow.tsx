@@ -4,7 +4,7 @@ import {
   PencilSquareIcon,
 } from "@heroicons/react/24/outline";
 
-import type { DowntimeLog } from "../types/downtimeLog";
+import type { DowntimeLog } from "../types/downtime-log.types";
 
 interface Props {
   record: DowntimeLog;
